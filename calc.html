@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Calculator</title>
+    <style>
+        .calculator {
+            width: 250px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="button"] {
+            width: 48%;
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <input type="button" value="1" onclick="addToDisplay('1')">
+        <input type="button" value="2" onclick="addToDisplay('2')">
+        <input type="button" value="3" onclick="addToDisplay('3')">
+        <input type="button" value="+" onclick="addToDisplay('+')">
+        <br>
+        <input type="button" value="4" onclick="addToDisplay('4')">
+        <input type="button" value="5" onclick="addToDisplay('5')">
+        <input type="button" value="6" onclick="addToDisplay('6')">
+        <input type="button" value="-" onclick="addToDisplay('-')">
+        <br>
+        <input type="button" value="7" onclick="addToDisplay('7')">
+        <input type="button" value="8" onclick="addToDisplay('8')">
+        <input type="button" value="9" onclick="addToDisplay('9')">
+        <input type="button" value="*" onclick="addToDisplay('*')">
+        <br>
+        <input type="button" value="0" onclick="addToDisplay('0')">
+        <input type="button" value="." onclick="addToDisplay('.')">
+        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="/" onclick="addToDisplay('/')">
+        <br>
+        <input type="button" value="Clear" onclick="clearDisplay()">
+    </div>
+
+    <script>
+        function addToDisplay(value) {
+            var display = document.getElementById("display");
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            var display = document.getElementById("display");
+            display.value = "";
+        }
+
+        function calculate() {
+            var display = document.getElementById("display");
+            var result = eval(display.value);
+            display.value = result;
+        }
+    </script>
+</body>
+</html>

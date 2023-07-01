@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HTML Calculator</title>
+    <title>JavaScript Calculator</title>
     <style>
         .calculator {
             width: 250px;
@@ -60,7 +60,8 @@
 
         function calculate() {
             var display = document.getElementById("display");
-            var result = eval(display.value);
+            var expression = display.value;
+            var result = eval(expression);
             display.value = result;
         }
     </script>
